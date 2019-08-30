@@ -1,0 +1,7 @@
+
+kkotlin:S3776¨"RRefactor this method to reduce its Cognitive Complexity from 92 to the 15 allowed.(ˆ÷şÂ
+Fkotlin:S1481ô"-Remove this unused "heightPx" local variable.(ïĞÉ
+jkotlin:S117¡"RRename this local variable to match the regular expression "^[_a-z][a-zA-Z0-9]*$".(·ÿÙ¾
+<kotlin:S125õ"Remove this commented out code.(ñ¸ƒîúÿÿÿÿ
+okotlin:S117¶"RRename this local variable to match the regular expression "^[_a-z][a-zA-Z0-9]*$".(ÆÔû”øÿÿÿÿ
+Mkotlin:S1144…"4Remove this unused private "setAppBarOffset" method.(Ü¯ÕÜ

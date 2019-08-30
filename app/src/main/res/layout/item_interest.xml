@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+            android:id="@+id/statusContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_5"
+    >
+
+        <com.dating.mdate.utill.MyRegularTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView2"
+                android:padding="@dimen/space_10"
+                android:textSize="@dimen/text_size_13"
+                android:textColor="@color/pink_btn"
+                android:background="@drawable/pink_border_trans_bg"
+                android:text="@string/ethnicity"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+        <com.dating.mdate.utill.MyRegularTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvDelete"
+                android:visibility="gone"
+                android:paddingLeft="@dimen/space_5"
+                android:paddingBottom="@dimen/space_5"
+                android:textSize="@dimen/text_size_13"
+                android:gravity="top"
+                android:textColor="@color/pink_btn"
+                app:layout_constraintEnd_toEndOf="@+id/imageView2"
+                app:layout_constraintTop_toTopOf="@+id/imageView2"
+                android:background="@color/white"
+                android:text="x"
+        />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

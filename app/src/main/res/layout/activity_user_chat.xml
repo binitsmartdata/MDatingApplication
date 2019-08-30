@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="viewModel"
+                  type="com.dating.mdate.ui.twiliochat.UserChatViewModel"/>
+    </data>
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <!--   <com.dating.mdate.utill.MyRegularButton
+                android:id="@+id/btnBack"
+                android:layout_width="@dimen/space_15"
+                android:layout_height="@dimen/space_30"
+                android:padding="@dimen/space_15"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textAllCaps="true"
+                android:layout_margin="@dimen/space_20"
+                android:textColor="@color/white"
+                android:background="@drawable/back_grey_to_left"
+        />
+        <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/imgPic1"
+
+                android:layout_width="@dimen/space_60"
+                android:layout_height="@dimen/space_60"
+                android:src="@drawable/img_profile_placeholder"
+                android:padding="@dimen/space_2"
+                app:riv_border_width="@dimen/space_2"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/space_60"
+                app:riv_border_color="@color/my_profile_grey"
+                app:riv_corner_radius="@dimen/space_230"
+                app:layout_constraintLeft_toRightOf="@+id/btnBack"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/header_guideline"
+
+                android:layout_marginTop="10dp"
+                app:layout_constraintVertical_bias="0.25"
+                tools:layout_editor_absoluteX="165dp"/>
+        <TextView
+                android:text="Catherine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView"
+                app:layout_constraintStart_toEndOf="@+id/imgPic1"
+                android:layout_marginStart="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="40dp"/>
+
+        <android.support.constraint.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/header_guideline"
+                app:layout_constraintGuide_begin="112dp"
+                android:orientation="horizontal"/>
+-->
+        <android.support.constraint.ConstraintLayout
+                android:background="@color/app_light_gray"
+                android:id="@+id/header_layout"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/space_70"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+            <!--  <ImageView
+                    android:id="@+id/back_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:layout_margin="@dimen/space_10"
+                    android:background="@drawable/ic_back"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginBottom="60dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginTop="60dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline6"/>-->
+            <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/space_25"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline6"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_margin="@dimen/space_10"
+                    android:src="@drawable/back_grey_to_left"
+            />
+
+            <com.dating.mdate.utill.MyRegularButton
+                    android:id="@+id/settings_btn"
+                    android:layout_width="@dimen/space_30"
+                    android:layout_height="@dimen/space_30"
+                    android:padding="@dimen/space_15"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline7"
+                    android:textAllCaps="true"
+                    android:layout_margin="@dimen/space_20"
+                    android:textColor="@color/white"
+                    android:background="@drawable/ic_group_7098"
+            />
+
+
+            <!-- <ImageView android:layout_margin="@dimen/space_10"
+                       android:id="@+id/settings_btn"
+                       android:background="@drawable/ic_group_7098"
+                       app:layout_constraintTop_toTopOf="parent"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       app:layout_constraintStart_toStartOf="@+id/guideline7" android:layout_marginStart="8dp"
+                       android:layout_marginTop="8dp" android:layout_marginBottom="8dp" android:layout_marginEnd="8dp"
+                       android:layout_width="0dp" android:layout_height="wrap_content"/>
+-->
+            <!--<android.support.constraint.ConstraintLayout-->
+            <!--app:layout_constraintTop_toTopOf="parent"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+
+            <!--&gt;-->
+            <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/profile_image"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:src="@drawable/img_profile_placeholder"
+                    app:riv_border_width="@dimen/space_2"
+                    android:layout_gravity="center_horizontal"
+                    app:riv_border_color="@color/my_profile_grey"
+                    app:riv_corner_radius="@dimen/space_180"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/guideline5"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline8"
+            />
+
+
+            <com.dating.mdate.utill.MyBoldTextView
+                    android:text="Catherine"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/username"
+                    android:textSize="@dimen/text_size_16"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline8"/>
+            <android.support.constraint.Guideline android:layout_width="wrap_content"
+                                                  android:layout_height="wrap_content" android:id="@+id/guideline6"
+                                                  android:orientation="vertical"
+                                                  app:layout_constraintGuide_percent="0.10"/>
+            <android.support.constraint.Guideline android:layout_width="wrap_content"
+                                                  android:layout_height="wrap_content" android:id="@+id/guideline7"
+                                                  android:orientation="vertical"
+                                                  app:layout_constraintGuide_percent="0.9"/>
+            <android.support.constraint.Guideline android:layout_width="wrap_content"
+                                                  android:layout_height="wrap_content" android:id="@+id/guideline8"
+                                                  android:orientation="vertical"
+                                                  app:layout_constraintGuide_percent="0.50"/>
+            <android.support.constraint.Guideline android:layout_width="wrap_content"
+                                                  android:layout_height="wrap_content" android:id="@+id/guideline5"
+                                                  app:layout_constraintGuide_percent="0.30"
+                                                  android:orientation="vertical"/>
+            <android.support.constraint.Guideline android:layout_width="wrap_content"
+                                                  android:layout_height="wrap_content" android:id="@+id/guideline9"
+                                                  app:layout_constraintGuide_begin="20dp"
+                                                  android:orientation="vertical"/>
+            <!-- </android.support.constraint.ConstraintLayout>-->
+
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/chat_listview"
+                android:layout_margin="@dimen/space_15"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/imageSliderLayout"
+                app:layout_constraintTop_toBottomOf="@+id/header_layout"
+                tools:listitem="@layout/item_chat"
+        />
+
+        <android.support.constraint.ConstraintLayout
+                android:id="@+id/imageSliderLayout"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/chat_listview"
+                app:layout_constraintBottom_toTopOf="@+id/attachmentLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@color/white"
+        >
+            <!--<ImageView
+                android:layout_width="200dp"
+                android:layout_height="116dp"
+                android:src="@drawable/nature1"
+
+                android:background="@drawable/rounded_white_background"
+                android:scaleType="fitXY"
+            />-->
+
+            <android.support.v7.widget.RecyclerView
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:id="@+id/rv_images"
+                    tools:listitem="@layout/item_chat_images"
+            />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+                android:visibility="gone"
+                android:id="@+id/attachmentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/imageSliderLayout"
+                app:layout_constraintBottom_toTopOf="@+id/bottomLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_margin="@dimen/space_10"
+        >
+
+            <TextView
+                    android:padding="@dimen/space_10"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_margin="@dimen/space_10"
+                    android:visibility="gone"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_13"
+                    android:text="@string/typing_now"
+
+            />
+
+            <LinearLayout
+
+                    android:weightSum="3"
+                    android:background="@drawable/rounded_grey_background"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="0dp"
+                    android:gravity="center_vertical"
+                    android:layout_height="@dimen/space_60"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/guidelineattachment"
+            >
+
+
+                <ImageView
+                        android:layout_weight="1"
+                        android:id="@+id/btnMike"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:srcCompat="@drawable/mike"/>
+                <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/gray"/>
+
+                <ImageView
+                        android:layout_weight="1"
+                        android:id="@+id/btncamera"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        app:srcCompat="@drawable/camera"
+                />
+                <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/gray"/>
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:layout_gravity="bottom"
+
+                              android:layout_weight="1"
+                              android:orientation="vertical">
+                    <ImageView
+
+                            android:id="@+id/btnVideo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:textColor="@color/white"
+                            app:srcCompat="@drawable/ic_video"
+                    />
+
+                    <com.dating.mdate.utill.MyRegularTextView android:layout_width="wrap_content"
+                                                              android:layout_height="wrap_content"
+                                                              android:textSize="@dimen/text_size_12"
+                                                              android:layout_gravity="bottom|center_horizontal"
+                                                              android:text="@string/thirtysec"
+                                                              android:textColor="@color/gray_popup"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <android.support.constraint.Guideline
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/guidelineattachment"
+                    app:layout_constraintGuide_percent="0.40"
+                    android:orientation="vertical"/>
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+                android:id="@+id/bottomLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+        >
+            <com.dating.mdate.utill.MyRegularEdittext
+                    android:id="@+id/etEnterTxt"
+                    android:padding="@dimen/space_10"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline11"
+                    android:background="@drawable/grey_border_btn"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_margin="@dimen/space_10"
+                    android:hint="@string/write_message"
+                    android:textColorHint="#A1A1A1"
+
+            />
+            <com.dating.mdate.utill.MyRegularButton
+                    android:id="@+id/attachment"
+                    android:layout_width="@dimen/space_30"
+                    android:layout_height="@dimen/space_30"
+                    android:padding="@dimen/space_20"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline11"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:background="@drawable/attachment"
+            />
+            <com.dating.mdate.utill.MyRegularButton
+                    android:id="@+id/send"
+                    android:layout_width="@dimen/space_30"
+                    android:layout_height="@dimen/space_30"
+                    android:padding="@dimen/space_20"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/attachment"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textAllCaps="true"
+
+                    android:textColor="@color/white"
+                    android:background="@drawable/btn_send_en"
+            />
+            <android.support.constraint.Guideline
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/guideline10"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.10"/>
+            <android.support.constraint.Guideline
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/guideline11"
+                    app:layout_constraintGuide_percent="0.80"
+                    android:orientation="vertical"/>
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

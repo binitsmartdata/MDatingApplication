@@ -1,0 +1,998 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="viewModel"
+                type="com.dating.mdate.ui.dashboard.fragment.SettingsViewModel" />
+    </data>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F8F8F8">
+
+        <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <com.dating.mdate.utill.MyRegularTextView
+                    android:id="@+id/account_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/space_10"
+                    android:text="@string/account_type"
+                    android:textColor="@color/account_type_grey"
+                    android:textSize="@dimen/sp_17"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/guideline1"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    />
+
+            <android.support.constraint.ConstraintLayout
+                    android:id="@+id/ll_account_type_options"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/guideline1"
+                    app:layout_constraintTop_toBottomOf="@+id/account_type">
+
+                <RadioGroup
+
+                        android:id="@+id/radioGroupAccountType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+
+                        >
+                    <!--  <LinearLayout
+                                    android:weightSum="2"
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">-->
+
+
+                    <RadioButton
+                            android:id="@+id/basicBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:checkedButton="@drawable/radio_button_selector"
+                            android:padding="@dimen/space_10"
+                            android:text="@string/basic"
+                            android:textColor="@color/account_type_grey"
+                            android:textSize="@dimen/sp_17"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <RadioButton
+                            android:id="@+id/premiumBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/space_20"
+                            android:layout_weight="1"
+                            android:checkedButton="@drawable/radio_button_selector"
+                            android:padding="@dimen/space_10"
+                            android:text="@string/premium"
+                            android:textColor="@color/account_type_grey"
+                            android:textSize="@dimen/sp_17"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    <!--    </LinearLayout>-->
+                </RadioGroup>
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                    android:id="@+id/view1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:background="@color/account_type_grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_account_type_options" />
+
+
+            <android.support.constraint.ConstraintLayout
+
+                    android:id="@+id/promo_code_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/space_5"
+                    app:layout_constraintStart_toEndOf="@+id/guideline1"
+                    app:layout_constraintTop_toBottomOf="@+id/view1">
+
+                <com.dating.mdate.utill.MyRegularTextView
+                        android:id="@+id/promo_code_heading"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/space_10"
+                        android:text="@string/apply_promo_code"
+                        android:textColor="@color/account_type_grey"
+                        android:textSize="@dimen/sp_17"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/guideline3"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                        android:id="@+id/tv_promo_code"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_5"
+                        android:layout_marginBottom="@dimen/space_5"
+                        android:background="@drawable/grey_border_btn"
+                        android:hint="@string/type_promo_code"
+                        android:padding="@dimen/space_15"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+                        app:layout_constraintStart_toEndOf="@+id/guideline3"
+                        app:layout_constraintTop_toBottomOf="@+id/promo_code_heading" />
+
+                <com.dating.mdate.utill.MyRegularButton
+                        android:id="@+id/send"
+                        android:layout_width="@dimen/space_40"
+                        android:layout_height="@dimen/space_40"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/btn_send_en"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:gravity="center"
+                        android:padding="@dimen/space_20"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/tv_promo_code" />
+
+                <android.support.constraint.Guideline
+                        android:id="@+id/guideline3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.055" />
+
+                <android.support.constraint.Guideline
+                        android:id="@+id/guideline4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.80" />
+            </android.support.constraint.ConstraintLayout>
+
+
+            <View
+                    android:id="@+id/view2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/space_20"
+                    android:background="@color/account_type_grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/promo_code_layout" />
+
+            <android.support.constraint.ConstraintLayout
+                    android:id="@+id/ll_restore_purchases"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/space_10"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/guideline1"
+                    app:layout_constraintTop_toBottomOf="@+id/view2">
+
+                <com.dating.mdate.utill.MyBoldTextView
+                        android:id="@+id/restore_purchases"
+                        android:layout_width="0dp"
+
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/restore_purchases"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_16"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+
+                        />
+
+                <com.dating.mdate.utill.MyRegularButton
+                        android:id="@+id/restore_go"
+                        android:layout_width="10dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="@dimen/space_10"
+                        android:background="@drawable/ic_right_arrow"
+                        android:gravity="center"
+                        android:padding="@dimen/space_10"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                    android:id="@+id/view3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:background="@color/account_type_grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_restore_purchases" />
+
+            <android.support.constraint.ConstraintLayout
+                    android:id="@+id/profile_visibility_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/guideline1"
+                    app:layout_constraintTop_toBottomOf="@+id/view3">
+
+                <android.support.constraint.ConstraintLayout
+                        android:id="@+id/ll_profile_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_5"
+                        android:orientation="horizontal"
+                        android:weightSum="1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    <com.dating.mdate.utill.MyRegularTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/space_10"
+                            android:text="@string/profile_visibility"
+                            android:textSize="@dimen/sp_17"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    <android.support.v7.widget.SwitchCompat
+                            android:id="@+id/profile_selection"
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:background="@null"
+                            android:button="@drawable/checkbox_selector"
+                            android:padding="@dimen/space_10"
+                            android:thumb="@null"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/guideline12"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:track="@null" />
+
+                    <android.support.constraint.Guideline
+                            android:id="@+id/guideline12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.80" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <com.dating.mdate.utill.MyRegularTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/space_7"
+                        android:text="@string/ur_profile"
+                        android:textColor="@color/account_type_grey"
+                        android:textSize="@dimen/sp_12"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ll_profile_header" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                    android:id="@+id/view4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/account_type_grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/profile_visibility_layout" />
+
+            <com.dating.mdate.utill.MyBoldTextView
+                    android:id="@+id/manage_notifications"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/space_10"
+                    android:text="@string/manage_notifications"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/guideline1"
+                    app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/notification_list"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/manage_notifications"
+                    tools:listitem="@layout/item_notification" />
+
+            <View
+                    android:id="@+id/view5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/account_type_grey"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/notification_list" />
+            <!--<com.dating.mdate.utill.MyRegularTextView
+                    android:layout_width="0dp"
+                    android:text="@string/apply_promo_code"
+                    android:layout_height="wrap_content"
+
+                    app:layout_constraintTop_toBottomOf="@+id/view1"
+            />-->
+
+
+            <android.support.constraint.ConstraintLayout
+
+                    android:id="@+id/ll_select_language"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/space_10"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/guideline1"
+                    app:layout_constraintTop_toBottomOf="@+id/notification_list">
+
+                <com.dating.mdate.utill.MyBoldTextView
+                        android:id="@+id/select_language"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/select_language"
+                        android:textSize="@dimen/sp_16"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <com.dating.mdate.utill.MyRegularButton
+                        android:id="@+id/select_language_go"
+                        android:layout_width="10dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="@dimen/space_10"
+                        android:background="@drawable/ic_right_arrow"
+                        android:gravity="center"
+                        android:padding="@dimen/space_5"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                    android:id="@+id/view6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:background="@color/account_type_grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_select_language" />
+
+            <android.support.constraint.ConstraintLayout
+
+                    android:id="@+id/ll_invite_friend"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/space_10"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/guideline1"
+                    app:layout_constraintTop_toBottomOf="@+id/view6">
+
+                <com.dating.mdate.utill.MyBoldTextView
+                        android:id="@+id/invite_friend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/invite_a_friend"
+                        android:textSize="@dimen/sp_16"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <com.dating.mdate.utill.MyRegularButton
+                        android:id="@+id/invite_friend_go"
+                        android:layout_width="10dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="@dimen/space_10"
+                        android:background="@drawable/ic_right_arrow"
+                        android:padding="@dimen/space_5"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <!-- <View
+                     android:id="@+id/view7"
+                     android:layout_width="wrap_content"
+                     android:layout_height="1dp"
+                     android:background="@color/account_type_grey"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintTop_toBottomOf="@+id/ll_invite_friend" />
+
+             <android.support.constraint.ConstraintLayout
+
+                     android:id="@+id/ll_social_media_page"
+                     android:layout_width="0dp"
+                     android:layout_height="wrap_content"
+                     android:padding="@dimen/space_10"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintStart_toEndOf="@+id/guideline1"
+                     app:layout_constraintTop_toBottomOf="@+id/view7">
+
+                 <com.dating.mdate.utill.MyBoldTextView
+                         android:id="@+id/social_media_page"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:text="@string/social_media_pages"
+                         android:textSize="@dimen/sp_16"
+                         app:layout_constraintBottom_toBottomOf="parent"
+                         app:layout_constraintStart_toStartOf="parent"
+                         app:layout_constraintTop_toTopOf="parent" />
+
+                 <com.dating.mdate.utill.MyRegularButton
+                         android:id="@+id/social_media_pages_go"
+                         android:layout_width="10dp"
+                         android:layout_height="20dp"
+                         android:layout_margin="@dimen/space_10"
+                         android:background="@drawable/ic_right_arrow"
+                         android:padding="@dimen/space_5"
+                         android:textAlignment="center"
+                         android:textAllCaps="true"
+                         android:textColor="@color/white"
+                         app:layout_constraintBottom_toBottomOf="parent"
+                         app:layout_constraintEnd_toEndOf="parent"
+                         app:layout_constraintTop_toTopOf="parent" />
+
+             </android.support.constraint.ConstraintLayout>-->
+
+            <View
+                    android:id="@+id/view8"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:background="@color/account_type_grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_invite_friend" />
+
+            <android.support.constraint.ConstraintLayout
+
+                    android:id="@+id/ll_help"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/space_10"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/guideline1"
+                    app:layout_constraintTop_toBottomOf="@+id/view8">
+
+                <com.dating.mdate.utill.MyBoldTextView
+                        android:id="@+id/help"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/help"
+                        android:textSize="@dimen/sp_16"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <com.dating.mdate.utill.MyRegularButton
+                        android:id="@+id/help_go"
+                        android:layout_width="10dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="@dimen/space_10"
+                        android:background="@drawable/ic_right_arrow"
+                        android:padding="@dimen/space_5"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                    android:id="@+id/view9"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:background="@color/account_type_grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_help" />
+
+            <android.support.constraint.ConstraintLayout
+                    android:id="@+id/ll_login_account"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/space_5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view9">
+
+                <android.support.constraint.Guideline
+                        android:id="@+id/guideline6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.06" />
+
+                <com.dating.mdate.utill.MyBoldTextView
+                        android:id="@+id/tv_login_account"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_15"
+                        android:text="@string/login_account"
+                        android:textSize="@dimen/sp_16"
+                        app:layout_constraintStart_toEndOf="@+id/guideline6"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                        android:id="@+id/ll_fb_account"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/space_10"
+                        android:orientation="horizontal"
+                        android:weightSum="1"
+                        app:layout_constraintStart_toEndOf="@+id/guideline6"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_login_account">
+
+                    <com.dating.mdate.utill.MyRegularTextView
+                            android:id="@+id/fb"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:padding="@dimen/space_10"
+                            android:text="@string/facebook"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_17"
+                            app:layout_constraintEnd_toStartOf="@+id/fb1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.dating.mdate.utill.MyRegularTextView
+                            android:id="@+id/fb_name"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:padding="@dimen/space_10"
+                            android:text="Sam Omar"
+                            android:textSize="@dimen/sp_17"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/fb1"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    <android.support.constraint.Guideline
+                            android:id="@+id/fb1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.60" />
+
+
+                </LinearLayout>
+
+                <View
+                        android:id="@+id/view10"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/space_10"
+                        android:background="@color/account_type_grey"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toEndOf="@+id/guideline6"
+                        app:layout_constraintTop_toBottomOf="@+id/ll_fb_account" />
+
+
+                <LinearLayout
+                        android:id="@+id/ll_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/space_10"
+                        android:orientation="horizontal"
+                        android:weightSum="1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view10">
+
+                    <com.dating.mdate.utill.MyRegularTextView
+                            android:id="@+id/email"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:padding="@dimen/space_10"
+                            android:text="@string/email"
+                            android:textColor="#757575"
+                            android:textSize="@dimen/sp_17" />
+
+                    <com.dating.mdate.utill.MyRegularTextView
+                            android:id="@+id/email_value"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:padding="@dimen/space_10"
+                            android:text=""
+                            android:textSize="@dimen/sp_17"
+                            android:visibility="visible" />
+
+
+                </LinearLayout>
+
+                <View
+                        android:id="@+id/view11"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/space_10"
+                        android:background="@color/account_type_grey"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ll_email" />
+
+                <LinearLayout
+                        android:id="@+id/ll_phone_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/space_10"
+                        android:orientation="horizontal"
+                        android:weightSum="1"
+                        app:layout_constraintStart_toEndOf="@+id/guideline6"
+                        app:layout_constraintTop_toBottomOf="@+id/view11">
+
+                    <com.dating.mdate.utill.MyRegularTextView
+                            android:id="@+id/phone_number"
+                            android:layout_width="0dp"
+                            android:layout_weight=".5"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/space_10"
+                            android:text="@string/phone_number"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_17"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.dating.mdate.utill.MyRegularTextView
+                            android:id="@+id/phone_number_value"
+                            android:layout_width="0dp"
+                            android:layout_weight=".5"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/space_10"
+                            android:text=""
+                            android:textSize="@dimen/sp_17"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/phone_No" />
+
+                    <android.support.constraint.Guideline
+                            android:id="@+id/phone_No"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.60" />
+
+
+                </LinearLayout>
+
+                <View
+                        android:id="@+id/view12"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/space_10"
+                        android:background="@color/account_type_grey"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ll_phone_number" />
+
+                <com.dating.mdate.utill.MyBoldTextView
+                        android:id="@+id/tv_account_settings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_20"
+                        android:text="@string/account_settings"
+                        android:textSize="@dimen/sp_16"
+                        app:layout_constraintStart_toEndOf="@+id/guideline6"
+                        app:layout_constraintTop_toBottomOf="@+id/view12" />
+
+                <android.support.constraint.ConstraintLayout
+                        android:id="@+id/ll_deactivate_acct"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_10"
+                        android:padding="@dimen/space_10"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/guideline6"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_account_settings">
+
+                    <com.dating.mdate.utill.MyBoldTextView
+                            android:id="@+id/deactivate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/deactivate"
+                            android:textSize="@dimen/sp_16"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.dating.mdate.utill.MyRegularButton
+                            android:id="@+id/select_deactivate_go"
+                            android:layout_width="10dp"
+                            android:layout_height="20dp"
+                            android:layout_margin="@dimen/space_10"
+                            android:background="@drawable/ic_right_arrow"
+                            android:gravity="center"
+                            android:padding="@dimen/space_5"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                </android.support.constraint.ConstraintLayout>
+
+                <View
+                        android:id="@+id/view13"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/account_type_grey"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ll_deactivate_acct" />
+
+                <android.support.constraint.ConstraintLayout
+                        android:id="@+id/ll_delete_acct"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/space_10"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toEndOf="@+id/guideline6"
+                        app:layout_constraintTop_toBottomOf="@+id/view13">
+
+                    <com.dating.mdate.utill.MyBoldTextView
+                            android:id="@+id/delete_acct"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/delete_account"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/sp_16"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.dating.mdate.utill.MyRegularButton
+                            android:id="@+id/delete_account_go"
+                            android:layout_width="10dp"
+                            android:layout_height="20dp"
+                            android:layout_margin="@dimen/space_10"
+                            android:background="@drawable/ic_right_arrow"
+                            android:gravity="center"
+                            android:padding="@dimen/space_5"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                </android.support.constraint.ConstraintLayout>
+
+
+                <View
+                        android:id="@+id/view14"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/account_type_grey"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ll_delete_acct" />
+
+
+                <!--
+                        <com.dating.mdate.utill.MyBoldTextView
+                                android:textSize="@dimen/sp_16"
+                                app:layout_constraintStart_toEndOf="@+id/guideline6"
+                                app:layout_constraintTop_toBottomOf="@+id/view14"
+                                android:id="@+id/tv_logout"
+                                android:text="@string/logout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>-->
+
+                <android.support.constraint.ConstraintLayout
+                        android:id="@+id/ll_logout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/space_10"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/guideline6"
+                        app:layout_constraintTop_toBottomOf="@+id/view14">
+
+                    <com.dating.mdate.utill.MyBoldTextView
+                            android:id="@+id/logout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/logout"
+                            android:textSize="@dimen/sp_16"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.dating.mdate.utill.MyRegularButton
+                            android:id="@+id/logout_go"
+                            android:layout_width="10dp"
+                            android:layout_height="20dp"
+                            android:layout_margin="@dimen/space_10"
+                            android:background="@drawable/ic_right_arrow"
+                            android:gravity="center"
+                            android:padding="@dimen/space_5"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                </android.support.constraint.ConstraintLayout>
+
+                <View
+                        android:id="@+id/view15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:background="@color/account_type_grey"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ll_logout" />
+
+                <LinearLayout
+                        android:id="@+id/ll_privacy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintTop_toBottomOf="@+id/view15">
+
+                    <LinearLayout
+                            android:id="@+id/con_privacy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/space_10"
+                            android:padding="@dimen/space_10"
+                            android:weightSum="1">
+
+                        <com.dating.mdate.utill.MyBoldTextView
+                                android:id="@+id/tv_privacy"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/space_12"
+                                android:layout_weight="1"
+                                android:paddingLeft="@dimen/space_10"
+                                android:text="@string/privacy_"
+                                android:textSize="@dimen/sp_16"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.dating.mdate.utill.MyRegularButton
+                                android:id="@+id/btn_privacy"
+                                android:layout_width="10dp"
+                                android:layout_height="20dp"
+                                android:layout_margin="@dimen/space_10"
+                                android:background="@drawable/ic_right_arrow"
+                                android:gravity="center"
+                                android:padding="@dimen/space_5"
+                                android:textAlignment="center"
+                                android:textAllCaps="true"
+                                android:textColor="@color/white"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                        android:id="@+id/view16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:background="@color/account_type_grey"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ll_privacy" />
+
+                <LinearLayout
+                        android:id="@+id/ll_Terms"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintTop_toBottomOf="@+id/view16">
+
+                    <LinearLayout
+                            android:id="@+id/con_terms"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/space_10"
+                            android:padding="@dimen/space_10"
+                            android:weightSum="1">
+
+                        <com.dating.mdate.utill.MyBoldTextView
+                                android:id="@+id/tv_terms"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/space_12"
+                                android:layout_weight="1"
+                                android:paddingLeft="@dimen/space_10"
+                                android:text="@string/terms_condition"
+                                android:textSize="@dimen/sp_16"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.dating.mdate.utill.MyRegularButton
+                                android:id="@+id/btn_terms"
+                                android:layout_width="10dp"
+                                android:layout_height="20dp"
+                                android:layout_margin="@dimen/space_10"
+                                android:background="@drawable/ic_right_arrow"
+                                android:gravity="center"
+                                android:padding="@dimen/space_5"
+                                android:textAlignment="center"
+                                android:textAllCaps="true"
+                                android:textColor="@color/white"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </android.support.constraint.ConstraintLayout>
+
+
+            <android.support.constraint.Guideline
+                    android:id="@+id/guideline1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.06" />
+
+            <android.support.constraint.Guideline
+                    android:id="@+id/guideline2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.50" />
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</layout>

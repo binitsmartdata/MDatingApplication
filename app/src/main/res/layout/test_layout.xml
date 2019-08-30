@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+                name="viewModel"
+                type="com.dating.mdate.ui.login.LoginViewModel"/>
+    </data>
+    <android.support.constraint.ConstraintLayout
+            android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <android.support.constraint.ConstraintLayout
+                android:id="@+id/layoutOne"
+                android:layout_width="@dimen/space_80"
+                android:layout_height="@dimen/space_80"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginRight="@dimen/space_20"
+                android:layout_marginLeft="@dimen/space_20"
+                app:layout_constraintTop_toBottomOf="@+id/layoutHeight">
+            <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/imgPic2"
+                    android:layout_width="@dimen/space_75"
+                    android:layout_height="@dimen/space_75"
+                    android:src="@color/black"
+                    android:visibility="visible"
+                    android:layout_marginRight="@dimen/space_5"
+                    android:layout_marginTop="@dimen/space_5"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                   app:layout_constraintRight_toRightOf="parent"
+            />
+            <Button
+                    android:id="@+id/btnImage2"
+                    android:layout_width="@dimen/space_15" android:layout_height="@dimen/space_15"
+                    android:padding="@dimen/space_10"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:background="@drawable/ic_delete_image"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+                name="viewModel"
+                type="com.dating.mdate.ui.dashboard.activity.ProfileViewModel"
+        />
+    </data>
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+    >
+        <com.dating.mdate.utill.MyRegularTextView
+                android:id="@+id/tvEmptyView"
+                android:layout_width="0dp" android:layout_height="0dp"
+                                                  app:layout_constraintStart_toStartOf="parent"
+                                                  app:layout_constraintEnd_toEndOf="parent"
+                android:padding="@dimen/space_10"
+                                                  app:layout_constraintTop_toTopOf="parent"
+                android:gravity="center"
+                android:visibility="gone"
+                android:textSize="@dimen/text_size_16"
+                android:textColor="@color/black"
+                android:text="@string/no_user_alert"
+                                                  app:layout_constraintBottom_toBottomOf="parent"/>
+        <com.dating.mdate.ui.cardstackview.CardStackView
+                android:id="@+id/card_stack_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/space_4"
+                android:clipToPadding="false"/>
+    </android.support.constraint.ConstraintLayout>
+</layout>

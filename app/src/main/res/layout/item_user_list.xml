@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+>
+
+    <com.dating.mdate.utill.SwipeRevealLayout
+            android:background="#F8F8F8"
+            android:id="@+id/swipe_layout"
+            android:layout_marginTop="@dimen/space_5"
+            android:layout_width="match_parent"
+            app:dragFromEdge="right"
+            android:layout_height="@dimen/space_80">
+    <FrameLayout
+
+            android:layout_width="wrap_content"
+                  android:background="#EE2B47"
+                  android:layout_height="match_parent">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center"
+
+        >
+            <com.dating.mdate.utill.MyMediumTextView
+                    android:text="@string/unmatch"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/unmatch"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorWhite"
+                    android:paddingRight="@dimen/space_10"
+                    android:padding="@dimen/space_20"
+                    android:textSize="@dimen/sp_14"
+
+
+            />
+
+        </LinearLayout>
+    </FrameLayout>
+<FrameLayout
+        android:padding="@dimen/space_5"
+        android:id="@+id/chat_item"
+        android:background="#F8F8F8"
+        android:layout_width="match_parent"
+              android:layout_height="match_parent">
+   <!-- <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/imgPic1"
+
+                android:layout_width="@dimen/space_100"
+                android:layout_height="@dimen/space_100"
+                android:src="@drawable/img_profile_placeholder"
+                android:padding="@dimen/space_2"
+                app:riv_border_width="@dimen/space_2"
+                android:layout_gravity="center_horizontal"
+                app:riv_border_color="@color/my_profile_grey"
+                app:riv_corner_radius="@dimen/space_230"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="10dp" app:layout_constraintEnd_toEndOf="@id/partition"
+               />
+        <android.support.constraint.Guideline android:layout_width="wrap_content"
+                                              android:layout_height="wrap_content"
+                                              android:id="@+id/partition"
+                                              app:layout_constraintGuide_begin="129dp"
+                                              android:orientation="vertical"/>
+
+        <android.support.constraint.Guideline android:layout_width="wrap_content"
+                                              android:layout_height="wrap_content"
+                                              android:id="@+id/partitionRight"
+                                              app:layout_constraintGuide_begin="@dimen/space_350"
+                                              android:orientation="vertical"/>
+
+        <com.dating.mdate.utill.MyRegularTextView
+                android:text="Lisa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/username"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="@dimen/space_30"
+                app:layout_constraintStart_toStartOf="@+id/partition"
+                android:layout_marginLeft="@dimen/space_10"
+                />
+        <com.dating.mdate.utill.MyRegularTextView
+                android:text="Loreum Ipsum is simple dummy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/partition"
+                app:layout_constraintTop_toBottomOf="@+id/username"
+                android:layout_marginLeft="@dimen/space_10"
+                android:layout_marginTop="@dimen/space_10"
+                android:id="@+id/comment"
+                app:layout_constraintEnd_toStartOf="@+id/partitionRight"
+                android:layout_marginEnd="8dp"/>
+    </android.support.constraint.ConstraintLayout>-->
+    <LinearLayout android:layout_height="wrap_content"
+      android:layout_width="match_parent" android:orientation="vertical"
+    >
+<LinearLayout android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:weightSum="2"
+android:orientation="horizontal"
+>
+    <FrameLayout
+            android:layout_marginLeft="@dimen/space_5"
+            android:layout_marginRight="@dimen/space_5"
+            android:layout_width="wrap_content"
+                 android:layout_height="wrap_content">
+
+
+    <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/imgPic1"
+            android:layout_width="@dimen/space_60"
+            android:layout_height="@dimen/space_60"
+            android:src="@drawable/img_profile_placeholder"
+            android:padding="@dimen/space_2"
+            app:riv_border_width="@dimen/space_2"
+            android:layout_gravity="center_horizontal"
+            app:riv_border_color="@color/my_profile_grey"
+            app:riv_corner_radius="@dimen/space_230"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="10dp"
+    />
+        <ImageView
+                android:id="@+id/status"
+                android:layout_margin="@dimen/space_10"
+                android:layout_width="@dimen/space_12"
+                android:layout_height="@dimen/space_12"
+                app:srcCompat="@drawable/shape_green_circle"
+        />
+    </FrameLayout>
+
+
+    <LinearLayout android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1.2"
+                  android:orientation="vertical">
+        <LinearLayout android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+
+                       android:orientation="horizontal"
+        >
+         <com.dating.mdate.utill.MyRegularTextView
+            android:text="Lisa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/username"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="#363636"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/space_15"
+            android:layout_marginLeft="@dimen/space_10"
+         />
+            <com.dating.mdate.utill.MyMediumTextView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/username"
+                    android:layout_marginLeft="@dimen/space_10"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="2"
+                    android:textColor="@color/white"
+                    android:background="@drawable/shape_pink_circle"
+            />
+
+            </LinearLayout>
+    <com.dating.mdate.utill.MyRegularTextView
+            android:text="Loreum Ipsum is simple dummy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_10"
+            android:layout_marginTop="@dimen/space_7"
+            android:textSize="@dimen/text_size_12"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/comment"
+           />
+    </LinearLayout>
+    <com.dating.mdate.utill.MyRegularTextView
+            android:layout_weight="0.8"
+            android:text="3:30pm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_2"
+            android:layout_marginTop="@dimen/space_10"
+            android:textSize="@dimen/text_size_12"
+            android:textColor="#757575"
+            android:id="@+id/time"
+    />
+
+</LinearLayout>
+       <!-- <View
+                android:layout_height="@dimen/space_1"
+                android:layout_width="match_parent"
+                android:background="@color/white"
+
+        />-->
+    </LinearLayout>
+</FrameLayout>
+
+    </com.dating.mdate.utill.SwipeRevealLayout>
+</layout>

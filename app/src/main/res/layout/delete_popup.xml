@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        <FrameLayout
+                android:id="@+id/popup"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+
+                android:layout_margin="@dimen/space_20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            <!--// tools:layout_editor_absoluteY="44dp" tools:layout_editor_absoluteX="10dp"-->
+            <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/rounded_white_background"
+
+                    >
+
+                <com.dating.mdate.utill.MyRegularTextView
+                        android:id="@+id/tv_delete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_30"
+                        android:padding="@dimen/space_10"
+                        android:text="@string/delete_account_str"
+                        android:textAlignment="center"
+                        android:textColor="#292929"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/space_20"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_delete">
+
+                    <com.dating.mdate.utill.MyRegularButton
+                            android:id="@+id/yes_btn"
+                            android:layout_width="@dimen/space_100"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/space_20"
+                            android:layout_marginRight="@dimen/space_5"
+                            android:background="@drawable/yes_background_button"
+                            android:padding="@dimen/space_15"
+                            android:text="@string/yes"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_14"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline1"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.dating.mdate.utill.MyRegularButton
+                            android:id="@+id/no_btn"
+                            android:layout_width="@dimen/space_100"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/space_5"
+                            android:layout_marginTop="@dimen/space_20"
+                            android:layout_marginRight="@dimen/space_5"
+                            android:background="@drawable/no_background_button"
+                            android:padding="@dimen/space_15"
+                            android:text="@string/no"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_14"
+                            app:layout_constraintStart_toEndOf="@+id/guideline1"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    <android.support.constraint.Guideline
+                            android:id="@+id/guideline1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.50" />
+                </android.support.constraint.ConstraintLayout>
+
+
+            </android.support.constraint.ConstraintLayout>
+
+
+            <android.support.constraint.ConstraintLayout
+                    android:id="@+id/header"
+                    android:layout_width="@dimen/space_50"
+                    android:layout_height="@dimen/space_50"
+                    android:layout_gravity="center|top"
+                    android:background="@drawable/white_round_background"
+
+                    >
+
+                <ImageView
+                        android:id="@+id/header_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_sad"
+
+                        />
+            </android.support.constraint.ConstraintLayout>
+        </FrameLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

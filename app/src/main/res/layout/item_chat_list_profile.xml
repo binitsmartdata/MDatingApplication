@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        >
+<android.support.constraint.ConstraintLayout
+        android:id="@+id/container"
+        android:paddingLeft="@dimen/space_10"
+        android:paddingRight="@dimen/space_10"
+                                             android:layout_width="wrap_content"
+                                             android:layout_height="wrap_content">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/imgPic1"
+
+            android:layout_width="@dimen/space_60"
+            android:layout_height="@dimen/space_60"
+            android:src="@drawable/img_profile_placeholder"
+            android:padding="@dimen/space_2"
+            app:riv_border_width="@dimen/space_2"
+            android:layout_gravity="center_horizontal"
+            app:riv_border_color="@color/my_profile_grey"
+            app:riv_corner_radius="@dimen/space_230"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="10dp"/>
+    <com.dating.mdate.utill.MyMediumTextView
+            android:textAlignment="center"
+            android:text="Catherine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/userName"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/my_profile_grey"
+            app:layout_constraintTop_toBottomOf="@+id/imgPic1"
+            android:layout_marginTop="@dimen/space_10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+    />
+</android.support.constraint.ConstraintLayout>
+</layout>

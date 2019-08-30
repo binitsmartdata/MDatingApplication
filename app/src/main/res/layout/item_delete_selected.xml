@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+            android:id="@+id/statusContainer"
+            android:layout_width="wrap_content"
+            android:layout_marginEnd="@dimen/space_10"
+            android:layout_height="wrap_content">
+        <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/imgFlag" android:layout_width="@dimen/space_25"
+                android:layout_height="@dimen/space_15"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <com.dating.mdate.utill.MyRegularTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView2"
+                android:padding="@dimen/space_10"
+                android:textSize="@dimen/text_size_13"
+                android:textColor="@color/gray_profile_color"
+                android:text="@string/ethnicity"
+                app:layout_constraintStart_toEndOf="@+id/imgFlag"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        <com.dating.mdate.utill.MyRegularTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvDelete"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:padding="@dimen/space_10"
+                android:textSize="@dimen/text_size_13"
+                android:textColor="@color/pink_btn"
+                android:text="x"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+    </android.support.constraint.ConstraintLayout>
+</layout>

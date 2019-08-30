@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <com.dating.mdate.utill.MyRegularTextView
+            android:padding="@dimen/space_15"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/guideline3"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            android:textSize="@dimen/sp_17"
+            android:text="@string/new_matches"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#757575"
+            android:id="@+id/notification_type_name"/>
+
+    <android.support.v7.widget.SwitchCompat
+            android:background="@null"
+            app:track="@null"
+            android:thumb="@null"
+            android:id="@+id/notification_selection"
+            android:padding="@dimen/space_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/checkbox_selector"
+            app:layout_constraintStart_toEndOf="@+id/guideline2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+    />
+    <View
+            android:layout_height="@dimen/space_1"
+            android:layout_width="match_parent"
+            android:background="#757575"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/notification_selection"
+
+    />
+    <android.support.constraint.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline1"
+            app:layout_constraintGuide_percent="0.02"
+            android:orientation="vertical"/>
+    <android.support.constraint.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline3"
+            app:layout_constraintGuide_percent="0.06"
+            android:orientation="vertical"/>
+    <android.support.constraint.Guideline
+            android:orientation="vertical"
+            android:id="@+id/guideline2"
+            app:layout_constraintGuide_percent="0.75"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+</android.support.constraint.ConstraintLayout>

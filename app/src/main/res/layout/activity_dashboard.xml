@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="user"
+                  type="com.dating.mdate.ui.dashboard.activity.ProfileViewModel"/>
+    </data>
+
+    <android.support.v4.widget.DrawerLayout android:id="@+id/drawer_layout"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:fitsSystemWindows="true"
+                                            tools:openDrawer="start">
+
+        <!-- Layout to contain contents of main body of screen (drawer will slide over this) -->
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <android.support.constraint.ConstraintLayout
+                    android:id="@+id/layoutTop"
+                    android:layout_width="match_parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:padding="@dimen/space_10"
+                    android:background="@color/app_light_gray"
+                    android:layout_height="@dimen/space_50">
+                <android.support.constraint.ConstraintLayout
+                        android:id="@+id/layoutTitle"
+                        android:layout_width="0dp"
+                        android:visibility="gone"
+                        android:layout_height="match_parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+                    <com.dating.mdate.utill.MyBoldTextView
+                            android:id="@+id/tvTitle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:lineSpacingExtra="@dimen/space_5"
+                            android:textSize="@dimen/text_size_20"
+                            android:gravity="center"
+                            android:text="@string/my_profile"/>
+
+                </android.support.constraint.ConstraintLayout>
+                <android.support.constraint.ConstraintLayout
+                        android:id="@+id/layoutMenu"
+                        android:visibility="visible" android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    <ImageView
+                            android:id="@+id/btnLike"
+                            android:layout_width="@dimen/space_30" android:layout_height="@dimen/space_30"
+                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                            android:padding="@dimen/space_10"
+                            android:background="@drawable/actionbar_like"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+                    <ImageView
+                            android:id="@+id/btnLogo"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                            android:padding="@dimen/space_10"
+                            android:background="@drawable/actionbar_logo"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <ImageView
+                            android:id="@+id/btnFilter"
+                            android:layout_width="@dimen/space_26" android:layout_height="@dimen/space_26"
+                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                            android:padding="@dimen/space_10"
+                            android:background="@drawable/actionbar_filter"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"/>
+                </android.support.constraint.ConstraintLayout>
+            </android.support.constraint.ConstraintLayout>
+
+            <FrameLayout
+                    android:id="@+id/dashboard_fragment_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/tabs_tl"
+                    android:layout_below="@+id/layoutTop"/>
+
+
+            <android.support.design.widget.TabLayout
+                    android:id="@+id/tabs_tl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/white"
+                    app:tabGravity="fill"
+                    app:tabSelectedTextColor="@color/white"
+                    app:tabTextColor="@color/colorDarkGray"
+                    app:tabIndicatorHeight="0px"
+                    app:tabMaxWidth="0dp"
+                    app:tabMode="fixed"
+                    app:tabPaddingEnd="0px"
+                    app:tabPaddingStart="0px"/>
+
+        </RelativeLayout>
+
+        <!-- Container for contents of drawer - use NavigationView to make configuration easier -->
+        <android.support.design.widget.NavigationView
+                android:id="@+id/navigaionV"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:layout_marginBottom="@dimen/space_30"
+                android:visibility="visible"
+                android:fitsSystemWindows="true">
+            <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true"
+                    android:scrollbars="vertical">
+
+                <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/space_20"
+                        android:orientation="vertical">
+                    <android.support.constraint.ConstraintLayout
+                            android:id="@+id/layoutFilter"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:layout_marginTop="@dimen/space_40"
+                            android:layout_width="match_parent"
+
+                            android:layout_height="wrap_content" tools:layout_editor_absoluteX="20dp">
+                        <com.dating.mdate.utill.MyBoldTextView
+                                android:id="@+id/tvFilterTitle" android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/text_size_25"
+                                android:textColor="@color/black"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                android:text="@string/filters" app:layout_constraintBottom_toBottomOf="parent"/>
+                        <ImageView
+                                android:id="@+id/imgClose" android:layout_width="@dimen/space_25"
+                                android:layout_height="@dimen/space_25"
+
+                                app:srcCompat="@drawable/ic_close_filter"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                        />
+
+                    </android.support.constraint.ConstraintLayout>
+
+
+                    <com.dating.mdate.utill.MyBoldTextView
+                            android:id="@+id/tvBasicFilter" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:layout_marginTop="@dimen/space_30"
+                            android:textSize="@dimen/text_size_18" app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/layoutFilter"
+                            android:text="@string/basic_filters"/>
+                    <android.support.constraint.ConstraintLayout
+                            android:id="@+id/layoutAge"
+                            android:layout_marginTop="@dimen/space_30"
+                            android:layout_width="match_parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvBasicFilter"
+                            android:layout_height="wrap_content" tools:layout_editor_absoluteX="20dp">
+                        <com.dating.mdate.utill.MyBoldTextView
+                                android:id="@+id/tvAgeTitle" android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_size_16"
+
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                android:text="@string/age" app:layout_constraintBottom_toBottomOf="parent"/>
+                        <com.dating.mdate.utill.MyRegularTextView
+                                android:id="@+id/tvAgeValues" android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:text=""
+                                android:textSize="@dimen/text_size_13"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                        />
+                    </android.support.constraint.ConstraintLayout>
+                    <com.jaygoo.widget.RangeSeekBar
+                            android:id="@+id/rangeAge" android:layout_width="match_parent"
+                            app:rsb_mode="range"
+                            app:rsb_tick_mark_layout_gravity="bottom"
+                            app:rsb_indicator_height="@dimen/space_30"
+                            app:rsb_indicator_padding_left="@dimen/space_10"
+                            app:rsb_indicator_padding_right="@dimen/space_10"
+                            app:rsb_indicator_show_mode="alwaysHide"
+                            app:rsb_thumb_drawable="@drawable/pink_bg_btn"
+                            app:rsb_tick_mark_text_margin="15dp"
+                            app:rsb_indicator_background_color="@color/pink_btn"
+                            app:rsb_progress_drawable="@drawable/pink_bg_btn"
+                            app:rsb_indicator_drawable="@drawable/pink_bg_btn"
+                            app:rsb_min="18"
+                            app:rsb_max="55"
+                            app:rsb_progress_default_color="@color/my_profile_grey"
+                            app:rsb_progress_color="@color/pink_btn"
+                            app:rsb_gravity="center"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@+id/layoutAge"/>
+                    <android.support.constraint.ConstraintLayout
+                            android:id="@+id/layoutDistance"
+                            android:layout_width="match_parent"
+                            app:layout_constraintTop_toBottomOf="@id/rangeAge"
+                            android:layout_height="wrap_content" tools:layout_editor_absoluteX="20dp">
+                        <com.dating.mdate.utill.MyBoldTextView
+                                android:id="@+id/tvDistanceTitle" android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_size_16"
+
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                android:text="@string/distance" app:layout_constraintBottom_toBottomOf="parent"/>
+                        <android.support.v7.widget.SwitchCompat
+                                android:id="@+id/swtDistance" android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                app:track="@null"
+                                android:thumb="@null"
+
+                                android:textSize="@dimen/text_size_13"
+                                android:button="@drawable/checkbox_selector"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                        />
+                        <com.dating.mdate.utill.MyRegularTextView
+                                android:id="@+id/tvRangeValues" android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:text="@string/tenmiles"
+                                android:textSize="@dimen/text_size_13"
+
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/swtDistance"
+
+                        />
+
+                    </android.support.constraint.ConstraintLayout>
+                    <com.dating.mdate.utill.SeekbarWithIntervals
+                            android:id="@+id/rangeDistance" android:layout_width="match_parent"
+
+                            android:visibility="gone"
+                            app:rsb_thumb_drawable="@drawable/pink_bg_btn"
+                            app:rsb_min="0"
+                            app:rsb_max="100"
+                            app:rsb_min_interval="1"
+                            app:rsb_indicator_height="@dimen/space_30"
+                            app:rsb_indicator_padding_left="@dimen/space_10"
+                            app:rsb_indicator_padding_right="@dimen/space_10"
+                            app:rsb_tick_mark_text_margin="15dp"
+                            app:rsb_tick_mark_mode="number"
+                            app:rsb_tick_mark_text_array="@array/markArrayDistance"
+
+                            app:rsb_indicator_background_color="@color/pink_btn"
+
+                            app:rsb_progress_drawable="@drawable/pink_bg_btn"
+                            app:rsb_indicator_drawable="@drawable/pink_bg_btn"
+                            app:rsb_progress_default_color="@color/my_profile_grey"
+                            app:rsb_progress_color="@color/pink_btn"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@+id/layoutDistance"/>
+                    <android.support.constraint.ConstraintLayout
+                            android:id="@+id/layoutPrem" android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@+id/rangeDistance">
+                        <com.dating.mdate.utill.MyBoldTextView
+                                android:id="@+id/tvPremiumFilter" android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:layout_marginTop="@dimen/space_30"
+                                android:textSize="@dimen/text_size_18" app:layout_constraintStart_toStartOf="parent"
+
+                                android:text="@string/premium_filters"/>
+                        <com.dating.mdate.utill.MyBoldTextView
+                                android:id="@+id/tvEthnicityTitle" android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_size_16"
+                                android:layout_marginTop="@dimen/space_30"
+                                app:layout_constraintTop_toBottomOf="@+id/layoutLoc"
+                                app:layout_constraintStart_toStartOf="parent"
+                                android:text="@string/ethnicity"/>
+                        <android.support.constraint.ConstraintLayout
+                                android:id="@+id/layoutEthnicity"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                android:background="@drawable/grey_border_btn"
+                                android:layout_marginTop="@dimen/space_10"
+                                app:layout_constraintTop_toBottomOf="@+id/tvEthnicityTitle"
+                        >
+                            <Spinner
+                                    android:id="@+id/spinEthnicity"
+                                    android:layout_width="match_parent" android:layout_height="@dimen/space_50"
+                                    app:layout_constraintTop_toTopOf="parent"
+
+                                    style="@style/Widget.App.Spinner"
+                                    app:layout_constraintStart_toStartOf="parent"
+                            ></Spinner>
+
+                        </android.support.constraint.ConstraintLayout>
+                        <com.dating.mdate.utill.MyBoldTextView
+                                android:id="@+id/tvLocTitle" android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_size_16"
+                                android:layout_marginTop="@dimen/space_30"
+                                app:layout_constraintTop_toBottomOf="@+id/tvPremiumFilter"
+                                app:layout_constraintStart_toStartOf="parent"
+                                android:text="@string/location"/>
+                        <android.support.constraint.ConstraintLayout
+                                android:id="@+id/layoutLoc"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                android:background="@drawable/grey_border_btn"
+                                android:layout_marginTop="@dimen/space_10"
+                                app:layout_constraintTop_toBottomOf="@+id/tvLocTitle"
+                        >
+                            <com.dating.mdate.utill.MyRegularTextView
+                                    android:id="@+id/etCurrent"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/space_50"
+                                    android:textSize="@dimen/text_size_14"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    android:padding="@dimen/space_10"
+                                    android:gravity="start"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    android:inputType="textCapSentences"
+                                    android:text="@string/location"
+                                    app:layout_constraintBottom_toBottomOf="parent"/>
+                            <ImageView android:layout_width="@dimen/space_25" android:layout_height="@dimen/space_25"
+                                       app:srcCompat="@drawable/ic_pin"
+                                       app:layout_constraintTop_toTopOf="parent"
+                                       app:layout_constraintEnd_toEndOf="parent"
+                                       app:layout_constraintBottom_toBottomOf="parent"/>
+
+                        </android.support.constraint.ConstraintLayout>
+                        <com.dating.mdate.utill.MyBoldTextView
+                                android:id="@+id/tvOriginTitle" android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_size_16"
+                                android:layout_marginTop="@dimen/space_30"
+                                app:layout_constraintTop_toBottomOf="@+id/layoutEthnicity"
+                                app:layout_constraintStart_toStartOf="parent"
+                                android:text="@string/family_origin"/>
+                        <android.support.constraint.ConstraintLayout
+                                android:id="@+id/layoutOrigin"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                android:background="@drawable/grey_border_btn"
+                                android:layout_marginTop="@dimen/space_10"
+                                app:layout_constraintTop_toBottomOf="@+id/tvOriginTitle"
+                        >
+                            <Spinner
+                                    android:id="@+id/spinOrigin"
+                                    android:layout_width="match_parent" android:layout_height="@dimen/space_50"
+                                    app:layout_constraintTop_toTopOf="parent"
+
+                                    style="@style/Widget.App.Spinner"
+                                    app:layout_constraintStart_toStartOf="parent"
+                            ></Spinner>
+
+                        </android.support.constraint.ConstraintLayout>
+                        <android.support.constraint.ConstraintLayout
+                                android:id="@+id/layoutAction" android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+                                app:layout_constraintTop_toBottomOf="@id/layoutOrigin"
+                                android:layout_marginTop="@dimen/space_30"
+                        >
+                            <com.dating.mdate.utill.MyRegularButton
+                                    android:id="@+id/btnReport"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingTop="@dimen/space_10"
+                                    android:paddingBottom="@dimen/space_10"
+                                    android:paddingLeft="@dimen/space_20"
+                                    android:paddingRight="@dimen/space_20"
+                                    android:gravity="center"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    android:background="@drawable/dark_grey_bg"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    android:textSize="@dimen/text_size_15"
+                                    android:text="@string/continue_lbl"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/white"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintEnd_toStartOf="@+id/btnCancel"/>
+                            <com.dating.mdate.utill.MyRegularButton
+                                    android:id="@+id/btnCancel"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingTop="@dimen/space_10"
+                                    android:paddingBottom="@dimen/space_10"
+                                    android:paddingLeft="@dimen/space_20"
+                                    android:paddingRight="@dimen/space_20"
+                                    android:gravity="center" android:background="@drawable/light_grey_bg"
+                                    app:layout_constraintStart_toEndOf="@+id/btnReport"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    android:textSize="@dimen/text_size_15"
+                                    android:text="@string/clear_all"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/white"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintEnd_toEndOf="parent"/>
+
+
+                        </android.support.constraint.ConstraintLayout>
+
+
+                    </android.support.constraint.ConstraintLayout>
+
+
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v4.widget.NestedScrollView>
+        </android.support.design.widget.NavigationView>
+
+    </android.support.v4.widget.DrawerLayout>
+
+</layout>
